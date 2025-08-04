@@ -1,0 +1,206 @@
+/* ==================
+   Book Page Styles
+   ================== */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f7f6; /* A slightly softer background color */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'DM Serif Text', serif;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+/* =================================
+   NEW HEADER STYLES (OVERRIDE)
+==================================== */
+
+/* Resets any previous header style */
+header {
+    background-color: #fff !important;
+    padding: 15px 0 !important;
+    text-align: left !important; /* Overrides previous text-align: center */
+    border-bottom: 1px solid #e9ecef;
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+    color: #212529 !important; /* Resets text color for the container */
+}
+
+/* Flexbox container for alignment */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #212529;
+    font-family: 'DM Serif Text', serif;
+    font-size: 1.75rem;
+}
+
+/* Resets any previous nav list style */
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Base style for ALL nav links, overriding previous ones */
+header nav a {
+    display: block;
+    padding: 8px 16px !important;
+    text-decoration: none !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Style for INACTIVE links */
+header nav a:not(.active) {
+    background-color: transparent !important;
+    color: #333 !important;
+}
+
+header nav a:not(.active):hover {
+    color: #0d6efd !important; /* Change text color on hover */
+}
+
+/* Style for the ACTIVE link (the blue button) */
+header nav a.active {
+    background-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+/* --- Search Bar --- */
+/* =================================
+   Books Page: Search & Book Cards (Updated UI)
+==================================== */
+
+/* --- Search Bar (No changes needed, but kept for context) --- */
+.search-container {
+    position: relative;
+    margin: 0 auto 40px auto;
+    max-width: 600px;
+}
+#searchInput {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+#searchInput:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.15);
+}
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+/* --- UPDATED Book Grid & Cards --- */
+#booksGrid {
+    display: grid;
+    /* This creates smaller cards that are still responsive */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px; /* Slightly smaller gap */
+}
+
+.book-card {
+    background-color: #fff;
+    border-radius: 8px; /* Softer radius */
+    border: 1px solid #e9ecef; /* Subtle border */
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.book-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* A more rectangular, modern aspect ratio */
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem; /* The placeholder text size */
+    font-weight: bold;
+    color: white;
+}
+
+.book-info {
+    padding: 12px; /* Tighter padding */
+    text-align: center; /* Center the text */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; /* Slightly lighter weight */
+    font-size: 0.9rem; /* Smaller font for a cleaner look */
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Hiding the author paragraph for a cleaner look */
+.book-author {
+    display: none;
+}
+
+.no-results-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    padding: 40px;
+}
